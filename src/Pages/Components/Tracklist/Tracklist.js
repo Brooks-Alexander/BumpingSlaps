@@ -4,16 +4,16 @@ import './Tracklist.css';
 
 export class Tracklist extends React.Component {
 
-    render () {
+    render() {
         return (
             <div className="Tracklist">
-                {this.props.tracks.map( (song) => {
-                    return <Track 
-                                key={song.id} 
-                                track={song} 
-                                onAdd={this.props.onAdd}
-                                addSongToPlaylist={this.props.addSongToPlaylist}
-                            />;
+                {this.props.tracks.map((song, index) => {
+                    return <Track
+                        key={index}
+                        track={song}
+                        onAdd={this.props.onAdd}
+                        addSongToPlaylist={this.props.addSongToPlaylist}
+                    />;
                 })}
             </div>
         );

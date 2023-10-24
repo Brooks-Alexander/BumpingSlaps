@@ -52,12 +52,12 @@ class Main extends React.Component {
   addSongToPlaylist = (track) => {
     // Use setState to update the playlistTracks array
     this.setState((prevState) => ({
-        playlistTracks: [...prevState.playlistTracks, track],
+      playlistTracks: [...prevState.playlistTracks, track],
     }));
   };
 
   addTrack(track) {
-    const foundTrack = this.state.playlistTracks.find((playlistTrack) => 
+    const foundTrack = this.state.playlistTracks.find((playlistTrack) =>
       playlistTrack.id === track.id
     );
 
@@ -115,11 +115,11 @@ class Main extends React.Component {
               placeholder="Ya' Dig"
             />
             <Container>
-              <Button 
-                onClick={this.handleSearchSubmit} 
+              <Button
+                onClick={this.handleSearchSubmit}
                 variant='outline-info'
                 style={{ height: '100%' }}>
-                  Find music
+                Find music
               </Button>
             </Container>
           </Form>
@@ -127,10 +127,18 @@ class Main extends React.Component {
         </Navbar>
         <Switch>
           <Route exact path="/">
-            <PlaylistsPage playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
+            <PlaylistsPage
+              playlistName={this.state.playlistName}
+              playlistTracks={this.state.playlistTracks}
+              onAdd={this.addTrack}
+              addSongToPlaylist={this.addSongToPlaylist} />
           </Route>
           <Route exact path='/SlapsPage'>
-            <SlapsPage searchResults={this.state.searchResults} onAdd={this.addTrack} addSongToPlaylist={this.addSongToPlaylist} />
+            <SlapsPage
+              searchResults={this.state.searchResults}
+              onAdd={this.addTrack}
+              addSongToPlaylist={this.addSongToPlaylist}
+            />
           </Route>
           <Route exact path="/NowPlayingPage">
             <NowPlayingPAge />
