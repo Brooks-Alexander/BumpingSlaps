@@ -47,6 +47,7 @@ class Main extends React.Component {
       ],
     };
     this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   addSongToPlaylist = (track) => {
@@ -63,6 +64,13 @@ class Main extends React.Component {
 
     const newTrack = this.state.playlistTracks.concat(track);
     foundTrack ? console.log('Track already exists in playlist') : this.setState({ playlistTracks: newTrack });
+  }
+
+  removeTrack(track) {
+    const isPresent = this.state.playlistTracks.filter(
+      (playlistTrack) => playlistTrack.id !== track.id
+    );
+    this.setState({ playlistTracks: isPresent });
   }
 
   handleRoute = route => () => {
@@ -131,6 +139,7 @@ class Main extends React.Component {
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
               onAdd={this.addTrack}
+              onRemove={this.removeTrack}
               addSongToPlaylist={this.addSongToPlaylist} />
           </Route>
           <Route exact path='/SlapsPage'>

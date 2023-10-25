@@ -11,7 +11,7 @@ class SlapsPage extends React.Component {
         <Tracklist
           tracks={this.props.searchResults}
           onAdd={this.props.onAdd}
-          isRemoval={false} /* It is not used anywhere now, also don't forget to add this prop to the <PlaylistsPage /> component later */
+          isRemoval={true} /* It is not used anywhere now, also don't forget to add this prop to the <PlaylistsPage /> component later */
           addSongToPlaylist={this.props.addSongToPlaylist}
         />
       </div>

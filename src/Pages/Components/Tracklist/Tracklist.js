@@ -12,6 +12,8 @@ export class Tracklist extends React.Component {
                         key={index}
                         track={song}
                         onAdd={this.props.onAdd}
+                        onRemove={this.props.onRemove}
+                        isRemoval={true}
                         addSongToPlaylist={this.props.addSongToPlaylist}
                     />;
                 })}
