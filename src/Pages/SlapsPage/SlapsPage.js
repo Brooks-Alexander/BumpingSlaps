@@ -1,5 +1,6 @@
 import React from 'react';
-import { Tracklist } from '../Components/Tracklist/Tracklist';
+import { SongList } from '../Components/SongList/SongList';
+
 
 
 class SlapsPage extends React.Component {
@@ -8,7 +9,7 @@ class SlapsPage extends React.Component {
     return (
       <div className='SlapsPage'>
         <h2>Check the Slaps</h2>
-        <Tracklist
+        <SongList
           tracks={this.props.searchResults}
           onAdd={this.props.onAdd}
           isRemoval={true} /* It is not used anywhere now, also don't forget to add this prop to the <PlaylistsPage /> component later */

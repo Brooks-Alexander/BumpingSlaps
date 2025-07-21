@@ -5,9 +5,10 @@ import './Tracklist.css';
 export class Tracklist extends React.Component {
 
     render() {
+        
         return (
             <div className="Tracklist">
-                {this.props.tracks.map((song, index) => {
+                {this.props.playlistTracks.map((song, index) => {
                     return <Track
                         key={index}
                         track={song}
